@@ -1,0 +1,130 @@
+<h2>Webservices van de Adlib Gebruikersgroep</h2>
+
+<p>Adlib is software voor collectie-registratie. De Alib Gebruikersgroep is een vereniging van mensen en instellingen die gebruik maken van die software.  </p>
+
+<h3>Getty Vocabularies AAT in Adlib XML</h3>
+
+<p>Door middel van deze webservice kun je thesaurustermen in Adlib voorzien van unieke identifiers uit de Art &amp; Architecture Thesaurus.  </p>
+
+<p>Waarom zou je dat doen? Een term als <em>bank</em> kan van alles zijn: een financiële instelling, een bankgebouw, een strook land onder water waar mosselen groeien, en nog wel meer. De term <em>bank (meubilair)</em> is al minder dubbelzinnig. Door nu in het thesaurusrecord voor <em>bank (meubilair)</em> een link op te nemen naar de identifier voor dat <em>concept</em> in de Art &amp; Architecture Thesaurus, worden records in je collectie vindbaar als <em>concept</em>, en dat is onafhankelijk van de taal waarin gezocht wordt. Op die manier kunnen geautomatiseerd verbanden worden gevonden met andere collecties die beschikbaar zijn als Linked Open Data.  </p>
+
+<p>De service is bedoeld als een zogenaamde <em>Advanced External Source</em> in Adlib. Om die te kunnen gebruiken, zijn enkele aanpassingen in je Adlib-applicatie nodig. In <a href="PDF howto hertaald van Erik, moet ander linkje in en ander screenshot.">dit document</a> is beschreven hoe je die aanpassingen kunt maken.  </p>
+
+<h4>Wat doet het?</h4>
+
+<p>Hoe het werkt voor gebruikers is te zien in <a href="video bediening.">deze video</a>.  </p>
+
+<h4>Hoe werkt het?</h4>
+
+<p>Zie onderstaand plaatje. Het begint met een term die je invoert in een thesaurus-veld in Adlib. De service verpakt die term in een SPARQL-query-url, en stuurt die naar de AAT van het SPARQL-endpoint van Getty Vocabularies. Die geeft antwoord in json. De service zet dat antwoord om in Adlib-XML. Daarmee zijn velden in het antwoord direct bruikbaar in Adlib.  </p>
+
+<p><img src="/static/gvp2ax2.jpg" alt="Hoe werkt de service" title="Interface tussen Getty Vocabularies en Adlib. Van linksboven met de klok mee: een term ingevoerd in een gevalideerd veld wordt verpakt in een query die naar het SPARQL-endpoint van Getty Vocabularies gaat. Het antwoord in json wordt verwerkt tot Adlib XML en is daarmee direct beschikbaar in de thesaurus." />  </p>
+
+<h4>Wat moet je aanpassen in Adlib?</h4>
+
+<p>In <a href="PDF howto hertaald van Erik, moet ander linkje in en ander screenshot.">dit document</a> is beschreven hoe je Adlib kunt aanpassen. Bekendheid met Adlib Designer is noodzakelijk.  </p>
+
+<p>De basis-URL voor de AAT-webservice is  </p>
+
+<pre><code>http://services.adlibug.nl/aat/search?term=
+</code></pre>
+
+<p>Een zoekopdracht heet een query-URL, die ziet er zo uit:  </p>
+
+<p><a href="http://services.adlibug.nl/aat/search?term=fiets">http://services.adlibug.nl/aat/search?term=fiets</a>  </p>
+
+<p>Standaard zoekt de service naar Nederlandse termen. Engels, Frans en Duits zijn ook mogelijk. Dat kun je opgeven in de query-URL:  </p>
+
+<p><a href="http://services.adlibug.nl/aat/search?term=bicycle&amp;lang=en">http://services.adlibug.nl/aat/search?term=bicycle&amp;lang=en</a>  </p>
+
+<p><a href="http://services.adlibug.nl/aat/search?term=bicyclette&amp;lang=fr">http://services.adlibug.nl/aat/search?term=bicyclette&amp;lang=fr</a>  </p>
+
+<p><a href="http://services.adlibug.nl/aat/search?term=fahrrad&amp;lang=de">http://services.adlibug.nl/aat/search?term=fahrrad&amp;lang=de</a>  </p>
+
+<p>Het antwoord op deze query kan onderstaande velden bevatten.  </p>
+
+<table>
+<thead>
+<tr>
+  <th>veldnaam</th>
+  <th>inhoud</th>
+  <th>standaard Adlib</th>
+  <th>tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>term</code></td>
+  <td>de gevonden term</td>
+  <td>ja</td>
+  <td><code>te</code></td>
+</tr>
+<tr>
+  <td><code>source.number</code></td>
+  <td>URL van de term in Getty Vocabularies</td>
+  <td>ja, zie 1a.</td>
+  <td><code>tn</code></td>
+</tr>
+<tr>
+  <td><code>term.number</code></td>
+  <td>URL van de term in Getty Vocabularies</td>
+  <td>ja, zie 1b.</td>
+  <td><code>tn</code></td>
+</tr>
+<tr>
+  <td><code>Getty_ID</code></td>
+  <td>URL van de term in Getty Vocabularies</td>
+  <td>nee, zie 1c.</td>
+  <td></td>
+</tr>
+<tr>
+  <td><code>source</code></td>
+  <td>'Getty Vocabularies AAT, CC-BY license', altijd</td>
+  <td>ja</td>
+  <td><code>br</code></td>
+</tr>
+<tr>
+  <td><code>scope_note</code></td>
+  <td>Scope note</td>
+  <td>ja</td>
+  <td><code>sn</code></td>
+</tr>
+<tr>
+  <td><code>history_note</code></td>
+  <td>historische notitie</td>
+  <td>ja</td>
+  <td><code>hn</code></td>
+</tr>
+<tr>
+  <td><code>term_type</code></td>
+  <td><em>Soort term</em> in Getty Vocabularies</td>
+  <td>nee, zie 2.</td>
+  <td></td>
+</tr>
+<tr>
+  <td><code>term_type_uri</code></td>
+  <td>link naar Soort term in Getty Vocabularies</td>
+  <td>nee, zie 2.</td>
+  <td></td>
+</tr>
+<tr>
+  <td><code>broader.term</code></td>
+  <td><em>Preferred broader term</em> van de <em>gevonden term</em> in Getty Vocabularies</td>
+  <td>ja, zie 3.</td>
+  <td><code>bt</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3>noten</h3>
+
+<ol>
+<li><p>Deze URL is de unieke identifier waar het allemaal om begonnen is. In welk veld zet je die? <br />
+a. Applicatie-versie 4.5 heeft standaard een veld <code>source.number</code> met tag <code>tn</code> van het data-type <em>Application</em>. <br />
+b. Applicatie-versies 3.4 en 4.2 bevatten standaard het veld <code>term.number</code> met tag <code>tn</code>, van het data-type <em>Text</em>. Meestal wil je een hyperlink aanklikbaar hebben, dus dan moet het data-type van dat veld <em>Application</em> worden. <br />
+c. Als je ervoor kiest om in je thesaurus een aparte veldgroep aan te maken voor deze velden, dan moet je in de data dictionary het Engelstalige URL-veld <code>Getty_ID</code> noemen in de data dictionary.  </p></li>
+<li><p>Adlib bevat een veld <em>soort term</em> (<code>term.type</code>) voor het domein van de term (bijvoorbeeld <em>vervaardiger</em> of <em>materiaalsoort</em>). In Getty Vocabularies heeft <code>term_type</code> eerder de functie van <em>term status</em>, maar de waardes daarvan komen niet overeen met die in Adlib. Daarom is dit veld wel bruikbaar ter oriëntatie, maar minder geschikt om over te nemen in Adlib. Hetzelfde geldt voor <code>term_type_uri</code>.  </p></li>
+<li><p>Of je Getty's Broader Preferred term al dan niet moet overnemen in je eigen thesaurus, hangt sterk af van je collectie.  </p></li>
+</ol>
+
+<p><br>  </p>

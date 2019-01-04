@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <title>Webservices van de Adlib gebruikersgroep</title>
+</head>
+<body>
+  <div><a href="/">AAT-webservice</a>&nbsp;|&nbsp;<a href="http://www.adlibug.nl/">Adlib Gebruikersgroep</a></div>
+  <br>
+  <hr>
+  {% block content %}{% endblock %}
+</body>
+</html>
