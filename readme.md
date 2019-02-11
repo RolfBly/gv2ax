@@ -24,4 +24,4 @@ in this repository for more details.
 
 [1]: https://choosealicense.com/licenses/gpl-3.0/
 
-Contact [@RolfBly][https://twitter.com/RolfBly]
+Contact [@RolfBly](https://twitter.com/RolfBly)
