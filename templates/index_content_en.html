@@ -1,0 +1,146 @@
+<h2>Webservice of the Dutch Adlib User Group</h2>
+
+<p>Adlib is collection management software. The Dutch Adlib Usergroep is een association op people and institutions that use that software.  </p>
+
+<h3>Getty Vocabularies AAT in Adlib XML</h3>
+
+<p>This webservice allows you to derive and/or complement thesaurus-records in your Adlib, from the Art &amp; Architecture Thesaurus (AAT), maintained by The Getty Vocabularies Project. The fields that you can derive and/or complement are detailed below.  </p>
+
+<p>The webservice is intended as an <em>Advanced External Source</em> in Adlib. In order to use the service, you may need to upgrade your Adlib software to version 7.5, and you will need to make a few modifications to your Adlib-application. <a href="/static/Advanced_external_source_v_service.adlibug.nl.pdf">This document</a> provides the details.  </p>
+
+<h4>Wat does it do?</h4>
+
+<p>This video shows what it looks like for the Adlib user. Narration in Dutch.  </p>
+
+<iframe src="https://player.vimeo.com/video/314264717" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  
+
+<h4>How to modify Adlib</h4>
+
+<p><a href="/static/Advanced_external_source_v_service.adlibug.nl.pdf">This document</a> provides full detail. You will need some skill with Adlib Designer.  </p>
+
+<h4>What's the URL format?</h4>
+
+<p>The base URL for the AAT-webservice is  </p>
+
+<pre><code>http://service.adlibug.nl/aat/search?term=
+</code></pre>
+
+<p>A search is called a query-URL, it looks like this.  </p>
+
+<p><a href="http://service.adlibug.nl/aat/search?term=fiets">http://service.adlibug.nl/aat/search?term=bank</a>  </p>
+
+<p>Try it! The default search language is <strong>Dutch</strong>. <strong>English</strong>, <strong>French</strong> and <strong>German</strong> are supported as well. You specify the language in the query-URL, like so:  </p>
+
+<p><a href="http://service.adlibug.nl/aat/search?term=bicycle&amp;lang=en">http://service.adlibug.nl/aat/search?term=bicycle&amp;lang=en</a>  </p>
+
+<p><a href="http://service.adlibug.nl/aat/search?term=bicyclette&amp;lang=fr">http://service.adlibug.nl/aat/search?term=bicyclette&amp;lang=fr</a>  </p>
+
+<p><a href="http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de">http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de</a>  </p>
+
+<p>In Adlib Designer, you specify the external source for your term(s) (e.g. Object name, Object category, or Keyword) for each field, in its tab <em>Linked field properties</em>, box <em>External sources</em>, field <em>Path to URL</em>. For Dutch, you would enter:  </p>
+
+<pre><code>http://service.adlibug.nl/aat/search?term=%data%
+</code></pre>
+
+<p>For German, it would be:  </p>
+
+<pre><code>http://service.adlibug.nl/aat/search?term=%data%&amp;lang=de
+</code></pre>
+
+<p>Note that you don't need quotes around <code>%data%</code>, nor a '*' after it to force right-truncation. The service does that for you. So 'crystol' will get you 'crystolea', 'crystoleum' and 'crystoleums'.  </p>
+
+<h4>Which fields does the service provide?</h4>
+
+<p>The answer to the query may contain any of the fields below.  </p>
+
+<table>
+<thead>
+<tr>
+  <th>veldnaam</th>
+  <th>content</th>
+  <th>standard Adlib</th>
+  <th>tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>term</code></td>
+  <td>the term found</td>
+  <td>yes</td>
+  <td><code>te</code></td>
+</tr>
+<tr>
+  <td><code>source.number</code></td>
+  <td>URL of the concept in Getty Vocabularies</td>
+  <td>yes, see 1a.</td>
+  <td><code>tn</code></td>
+</tr>
+<tr>
+  <td><code>term.number</code></td>
+  <td>URL of the concept in Getty Vocabularies</td>
+  <td>yes, see 1b.</td>
+  <td><code>tn</code></td>
+</tr>
+<tr>
+  <td><code>Getty_ID</code></td>
+  <td>URL of the concept in Getty Vocabularies</td>
+  <td>yes, see 1c.</td>
+  <td></td>
+</tr>
+<tr>
+  <td><code>source</code></td>
+  <td>'Getty Vocabularies AAT, CC-BY license', always</td>
+  <td>yes</td>
+  <td><code>br</code></td>
+</tr>
+<tr>
+  <td><code>scope_note</code></td>
+  <td>Scope note</td>
+  <td>yes</td>
+  <td><code>sn</code></td>
+</tr>
+<tr>
+  <td><code>history_note</code></td>
+  <td>Historical note</td>
+  <td>yes</td>
+  <td><code>hn</code></td>
+</tr>
+<tr>
+  <td><code>term_type</code></td>
+  <td><em>term type</em> in Getty Vocabularies</td>
+  <td>no, see 2.</td>
+  <td></td>
+</tr>
+<tr>
+  <td><code>term_type_uri</code></td>
+  <td>link to term_type in Getty Vocabularies</td>
+  <td>no, see 2.</td>
+  <td></td>
+</tr>
+<tr>
+  <td><code>broader.term</code></td>
+  <td>Getty Vocabularies' <em>Preferred broader term</em> of the term found</td>
+  <td>yes, zie 3.</td>
+  <td><code>bt</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3>notes</h3>
+
+<ol>
+<li><p>This URL is a unique, persistent identifier in the form of a hyperlink, to the Getty ID for the term. Where do you put this? <br />
+a. Application version 4.5 has a field <code>source.number</code>, tag <code>tn</code> of the type <em>Application</em>. <br />
+b. Application version 3.4 and 4.2 have the field <code>term.number</code>, tag <code>tn</code>, data type <em>Text</em>. You'll want hyperlinks to be clickable, so you'll have to change the data type to <em>Application</em>. <br />
+c. Should you choose to create a separate field group for the fields you derive with this service, then you should create a field with the data dictionary name Getty_ID, of the type Application.  </p></li>
+<li><p>Your Adlib thesaurus has a field <em>term type</em> (<code>term.type</code>) for the term's domain (e.g. <em>creator</em> or <em>material type</em>). In Getty Vocabularies, <code>term_type</code> is more a term <em>term status</em>, but it's values do not correspond to what's in Adlib. Hence, this field could be used for orientation, but copying it into a thesaurus record isn't very useful. Likewise for <code>term_type_uri</code>.  </p></li>
+<li><p>Whether or not Getty's Broader Preferred term is suitable for your collection, your thesaurus, depends on your collection.  </p></li>
+</ol>
+
+<p><br>  </p>
+
+<h4>How does it work?</h4>
+
+<p>Refer to the image below. Clockwise from top left, we start with a term that you enter into a thesaurus-validated field in Adlib. The service wraps that term in a SPARQL query url, and sends that to Getty Vocabularies AAT SPARQL endpoint. It responds in json. The service turns that answer into Adlib-XML. The fields in the response can be automatically copied ('derived') into your Adlib's thesaurus.  </p>
+
+<p><img src="/static/gvp2ax2.jpg" alt="Hoe werkt de service" title="Interface between Getty Vocabularies AAT and Adlib. Clockwise from top left, a term that you enter in a catalogue record, is wrapped in a SPARQL-query and sent to Getty Vocabularies SPARQL endpoint. The response in json is turned into Adlib XML and made available in the Adlib thesaurus linked to your catalogue." />  </p>

@@ -1,45 +1,55 @@
-<h2>Webservices van de Adlib Gebruikersgroep</h2>
+<h2>Webservice van de Adlib Gebruikersgroep</h2>
 
 <p>Adlib is software voor collectie-registratie. De Alib Gebruikersgroep is een vereniging van mensen en instellingen die gebruik maken van die software.  </p>
 
 <h3>Getty Vocabularies AAT in Adlib XML</h3>
 
-<p>Door middel van deze webservice kun je thesaurustermen in Adlib voorzien van unieke identifiers uit de Art &amp; Architecture Thesaurus.  </p>
+<p>Door middel van deze webservice kun je thesaurustermen in Adlib ontlenen en/of aanvullen met informatie uit de Art &amp; Architecture Thesaurus.  </p>
 
-<p>Waarom zou je dat doen? Een term als <em>bank</em> kan van alles zijn: een financiële instelling, een bankgebouw, een strook land onder water waar mosselen groeien, en nog wel meer. De term <em>bank (meubilair)</em> is al minder dubbelzinnig. Door nu in het thesaurusrecord voor <em>bank (meubilair)</em> een link op te nemen naar de identifier voor dat <em>concept</em> in de Art &amp; Architecture Thesaurus, worden records in je collectie vindbaar als <em>concept</em>, en dat is onafhankelijk van de taal waarin gezocht wordt. Op die manier kunnen geautomatiseerd verbanden worden gevonden met andere collecties die beschikbaar zijn als Linked Open Data.  </p>
-
-<p>De service is bedoeld als een zogenaamde <em>Advanced External Source</em> in Adlib. Om die te kunnen gebruiken, zijn enkele aanpassingen in je Adlib-applicatie nodig. In <a href="PDF howto hertaald van Erik, moet ander linkje in en ander screenshot.">dit document</a> is beschreven hoe je die aanpassingen kunt maken.  </p>
+<p>De service is bedoeld als een zogenaamde <em>Advanced External Source</em> in Adlib. Om die te kunnen gebruiken, zijn aanpassingen in je Adlib-applicatie nodig. In <a href="/static/Advanced_external_source_v_service.adlibug.nl.pdf">dit document</a> is beschreven hoe je die aanpassingen kunt maken.  </p>
 
 <h4>Wat doet het?</h4>
 
-<p>Hoe het werkt voor gebruikers is te zien in <a href="video bediening.">deze video</a>.  </p>
+<p>Hoe het werkt voor gebruikers is te zien in deze video. </p>
 
-<h4>Hoe werkt het?</h4>
-
-<p>Zie onderstaand plaatje. Het begint met een term die je invoert in een thesaurus-veld in Adlib. De service verpakt die term in een SPARQL-query-url, en stuurt die naar de AAT van het SPARQL-endpoint van Getty Vocabularies. Die geeft antwoord in json. De service zet dat antwoord om in Adlib-XML. Daarmee zijn velden in het antwoord direct bruikbaar in Adlib.  </p>
-
-<p><img src="/static/gvp2ax2.jpg" alt="Hoe werkt de service" title="Interface tussen Getty Vocabularies en Adlib. Van linksboven met de klok mee: een term ingevoerd in een gevalideerd veld wordt verpakt in een query die naar het SPARQL-endpoint van Getty Vocabularies gaat. Het antwoord in json wordt verwerkt tot Adlib XML en is daarmee direct beschikbaar in de thesaurus." />  </p>
+<iframe src="https://player.vimeo.com/video/314264717" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <h4>Wat moet je aanpassen in Adlib?</h4>
 
-<p>In <a href="PDF howto hertaald van Erik, moet ander linkje in en ander screenshot.">dit document</a> is beschreven hoe je Adlib kunt aanpassen. Bekendheid met Adlib Designer is noodzakelijk.  </p>
+<p>In <a href="/static/Advanced_external_source_v_service.adlibug.nl.pdf">dit document</a> (Engels) is beschreven hoe je Adlib kunt aanpassen. Enige bekendheid met de bediening van Adlib Designer is noodzakelijk.  </p>
+
+<h4>Hoe ziet een query-URL eruit?</h4>
 
 <p>De basis-URL voor de AAT-webservice is  </p>
 
-<pre><code>http://services.adlibug.nl/aat/search?term=
+<pre><code>http://service.adlibug.nl/aat/search?term=
 </code></pre>
 
 <p>Een zoekopdracht heet een query-URL, die ziet er zo uit:  </p>
 
-<p><a href="http://services.adlibug.nl/aat/search?term=fiets">http://services.adlibug.nl/aat/search?term=fiets</a>  </p>
+<p><a href="http://service.adlibug.nl/aat/search?term=fiets">http://service.adlibug.nl/aat/search?term=fiets</a>  </p>
 
-<p>Standaard zoekt de service naar Nederlandse termen. Engels, Frans en Duits zijn ook mogelijk. Dat kun je opgeven in de query-URL:  </p>
+<p>Probeer het maar! Standaard zoekt de service naar <strong>Nederlandse</strong> termen. <strong>Engels, Frans en Duits</strong> zijn ook mogelijk. Dat kun je opgeven in de query-URL:  </p>
 
-<p><a href="http://services.adlibug.nl/aat/search?term=bicycle&amp;lang=en">http://services.adlibug.nl/aat/search?term=bicycle&amp;lang=en</a>  </p>
+<p><a href="http://service.adlibug.nl/aat/search?term=bicycle&amp;lang=en">http://service.adlibug.nl/aat/search?term=bicycle&amp;lang=en</a>  </p>
 
-<p><a href="http://services.adlibug.nl/aat/search?term=bicyclette&amp;lang=fr">http://services.adlibug.nl/aat/search?term=bicyclette&amp;lang=fr</a>  </p>
+<p><a href="http://service.adlibug.nl/aat/search?term=bicyclette&amp;lang=fr">http://service.adlibug.nl/aat/search?term=bicyclette&amp;lang=fr</a>  </p>
 
-<p><a href="http://services.adlibug.nl/aat/search?term=fahrrad&amp;lang=de">http://services.adlibug.nl/aat/search?term=fahrrad&amp;lang=de</a>  </p>
+<p><a href="http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de">http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de</a>  </p>
+
+<p>In Adlib Designer, geef je de external source voor je termen (bijvoorbeeld Objectnaam, Object categorie of Trefwoord) voor elk veld in tabblad <em>Linked field properties</em>, box <em>External sources</em>, veld  <em>Path to URL</em>. Voor Nederlands geef je dit:  </p>
+
+<pre><code>http://service.adlibug.nl/aat/search?term=%data%
+</code></pre>
+
+<p>Voor Duits zou je dit doen:  </p>
+
+<pre><code>http://service.adlibug.nl/aat/search?term=%data%&amp;lang=de
+</code></pre>
+
+<p>Merk op dat er geen aanhalingstekens om <code>%data%</code> nodig zijn, en ook geen '*' erachter om rechtstruncatie af te dwingen. Dit doet de service vanzelf al. Dus als je zoekt op 'crystol' krijg je 'crystolea', 'crystoleum' en 'crystoleums'.  </p>
+
+<h4>Welke velden kan de service geven?</h4>
 
 <p>Het antwoord op deze query kan onderstaande velden bevatten.  </p>
 
@@ -119,7 +129,7 @@
 <h3>noten</h3>
 
 <ol>
-<li><p>Deze URL is de unieke identifier waar het allemaal om begonnen is. In welk veld zet je die? <br />
+<li><p>Deze URL is een unieke, persistente identifier in de vorm van een internet-link naar het Getty ID voor de term. In welk veld zet je die? <br />
 a. Applicatie-versie 4.5 heeft standaard een veld <code>source.number</code> met tag <code>tn</code> van het data-type <em>Application</em>. <br />
 b. Applicatie-versies 3.4 en 4.2 bevatten standaard het veld <code>term.number</code> met tag <code>tn</code>, van het data-type <em>Text</em>. Meestal wil je een hyperlink aanklikbaar hebben, dus dan moet het data-type van dat veld <em>Application</em> worden. <br />
 c. Als je ervoor kiest om in je thesaurus een aparte veldgroep aan te maken voor deze velden, dan moet je in de data dictionary het Engelstalige URL-veld <code>Getty_ID</code> noemen in de data dictionary.  </p></li>
@@ -128,3 +138,9 @@ c. Als je ervoor kiest om in je thesaurus een aparte veldgroep aan te maken voor
 </ol>
 
 <p><br>  </p>
+
+<h4>Hoe werkt het?</h4>
+
+<p>Zie onderstaand plaatje. Het begint met een term die je invoert in een thesaurus-veld in Adlib. De service verpakt die term in een SPARQL-query-url, en stuurt die naar de AAT van het SPARQL-endpoint van Getty Vocabularies. Die geeft antwoord in json. De service zet dat antwoord om in Adlib-XML. Daarmee zijn velden in het antwoord direct bruikbaar in Adlib.  </p>
+
+<p><img src="/static/gvp2ax2.jpg" alt="Hoe werkt de service" title="Interface tussen Getty Vocabularies en Adlib. Van linksboven met de klok mee: een term ingevoerd in een gevalideerd veld wordt verpakt in een query die naar het SPARQL-endpoint van Getty Vocabularies gaat. Het antwoord in json wordt verwerkt tot Adlib XML en is daarmee direct beschikbaar in de thesaurus." />  </p>

@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel='stylesheet' id='redux-google-fonts-onesocial-options-css'  href='http://fonts.googleapis.com/css?family=Merriweather%3A900%2C700%7CLato%3A400%2C300&#038;ver=1.0' type='text/css' media='all' />
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   <title>Webservices van de Adlib gebruikersgroep</title>
 </head>
 <body>
-  <div><a href="/">AAT-webservice</a>&nbsp;|&nbsp;<a href="http://www.adlibug.nl/">Adlib Gebruikersgroep</a></div>
-  <br>
+  <div class="w3-bar w3-light-grey">
+  <a href="http://www.adlibug.nl/"><img src="/static/adlibuglogo-1-300x84_background_light_grey.png" alt="" align="left" height="38px" style="background-color:red;" /></a>
+      <a href="/" class="w3-bar-item w3-button">Over de AAT-webservice (Nederlands)</a>
+      <a href="index_EN" class="w3-bar-item w3-button">About the AAT-webservice (English)</a>
+      <a href="http://www.adlibug.nl/" class="w3-bar-item w3-button">Adlib Gebruikersgroep</a>
+  </div>
   <hr>
   {% block content %}{% endblock %}
 </body>

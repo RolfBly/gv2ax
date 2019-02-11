@@ -1,5 +1,30 @@
 # -*- coding: utf-8 -*-  
 
+#----------------------------------------------------------------------------
+#   gv2ax.py - Getty vocabularies to Adlib XML 
+#   
+#   turns Getty Vocabularies's SPARQL endpoint into an embedded authority 
+#   file within Adlib collection management software
+#
+#    Copyright (C) 2019 Rolf Blijleven
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#    
+#    Find @RolfBly on Twitter
+#----------------------------------------------------------------------------
+
+
 import requests  
 import json  
 from lxml import etree as ET  
@@ -40,7 +65,8 @@ def AAT(search_term, language='nl', pretty=False):
         xmlrec.append(E.source('Getty Vocabularies AAT, CC-BY license'))
         try:  
             # xmlrec.append(E.broader_url(fetch('broader_Getty_ID'))) # can't use? 
-            xmlrec.append(E('broader.term', fetch('broader_term')))  # need . in tag name  
+            # xmlrec.append(E('broader_term', fetch('broader_term')))  # may need . in tag name for some versions?
+            xmlrec.append(E.broader_term(fetch('broader_term'))) 
         except KeyError:  
             pass  
         try:  

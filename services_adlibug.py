@@ -1,3 +1,5 @@
+# services_adlibug.py - Flask wrapper for gvp2ax.py
+
 from flask import Flask, request, Response, render_template
 import sys
 
@@ -10,6 +12,10 @@ valid_langs = ['nl', 'en', 'de', 'fr']
 @app.route('/')
 def index():
     return render_template('index.html')
+    
+@app.route('/index_EN')
+def index_EN():
+    return render_template('index_EN.html')    
 
 @app.route('/aat/search')
 def search():
