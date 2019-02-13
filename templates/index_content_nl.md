@@ -89,12 +89,12 @@ Zie onderstaand plaatje. Het begint met een term die je invoert in een thesaurus
 
 #### Colofon
 
-- Service, documentatie en deze site gemaakt door [Rolf Blijleven][8]. Contact: [@RolfBly][9] 
-- Hosting: [PythonAnywhere][10]
+- Project van [Rolf Blijleven][8]. Contact: [@RolfBly][9] 
+- Hosting door [PythonAnywhere][10]
 
-Met dank aan het support team van het [Getty Vocabularies Project][13] en aan de overige leden van het bestuur van de Adlib Gebruikersgroep. 
+Met dank aan he;t support team van het [Getty Vocabularies Project][13] en aan de overige leden van het bestuur van de Adlib Gebruikersgroep. 
 
-De code voor dit project is _open source_ software, beschikbaar via [Github][11] onder een [GNU General Public Licentie versie 3.0][12]. 
+De code voor dit project is open source software, beschikbaar via [Github][11] onder een [GNU General Public Licentie versie 3.0][12]. 
 
 [8]: http://www.rolfblijleven.nl
 [9]: https://twitter.com/RolfBly

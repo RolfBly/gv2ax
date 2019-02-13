@@ -88,18 +88,18 @@ Refer to the image below. Clockwise from top left, we start with a term that you
 [6]: http://service.adlibug.nl/aat/search?term=fahrrad&lang=de  
 [7]: /static/gvp2ax2.jpg  "Interface between Getty Vocabularies AAT and Adlib. Clockwise from top left, a term that you enter in a catalogue record, is wrapped in a SPARQL-query and sent to Getty Vocabularies SPARQL endpoint. The response in json is turned into Adlib XML and made available in the Adlib thesaurus linked to your catalogue."  
 
-#### Credits
+#### Credits  
 
-- Service, documentation and this site made by [Rolf Blijleven][8]. Contact: [@RolfBly][9] 
-- Hosting: [PythonAnywhere][10]
+- Project by [Rolf Blijleven][8]. Contact: [@RolfBly][9]  
+- Hosting: [PythonAnywhere][10]  
 
-Thanks to the support team at the [Getty Vocabularies Project][13] and to the other members of the board of the Dutch Adlib User group.
+Thanks to the support team at the [Getty Vocabularies Project][13] and to the other members of the board of the Dutch Adlib User group.  
 
-The code for this project is open source software available via [Github][11] under a [GNU General Public License version 3.0][12]. 
+The code for this project is open source software available via [Github][11] under a [GNU General Public License version 3.0][12].  
 
-[8]: http://www.rolfblijleven.nl
-[9]: https://twitter.com/RolfBly
-[10]: https://www.pythonanywhere.com
-[11]: https://github.com/RolfBly/gv2ax
-[12]: https://choosealicense.com/licenses/gpl-3.0/
-[13]: https://groups.google.com/forum/#!forum/gettyvocablod
+[8]: http://www.rolfblijleven.nl  
+[9]: https://twitter.com/RolfBly  
+[10]: https://www.pythonanywhere.com  
+[11]: https://github.com/RolfBly/gv2ax  
+[12]: https://choosealicense.com/licenses/gpl-3.0/  
+[13]: https://groups.google.com/forum/#!forum/gettyvocablod  

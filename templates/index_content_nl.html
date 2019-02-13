@@ -29,7 +29,7 @@
 
 <p><a href="http://service.adlibug.nl/aat/search?term=fiets">http://service.adlibug.nl/aat/search?term=fiets</a>  </p>
 
-<p>Probeer het maar! Standaard zoekt de service naar <strong>Nederlandse</strong> termen. <strong>Engels, Frans en Duits</strong> zijn ook mogelijk. Dat kun je opgeven in de query-URL:  </p>
+<p>Probeer het maar! Standaard zoekt de service naar <strong>Nederlandse</strong> termen. <strong>Engel"</strong>, <strong>Frans</strong> en <strong>Duits</strong> zijn ook mogelijk. Dat kun je opgeven in de query-URL:  </p>
 
 <p><a href="http://service.adlibug.nl/aat/search?term=bicycle&amp;lang=en">http://service.adlibug.nl/aat/search?term=bicycle&amp;lang=en</a>  </p>
 
@@ -37,7 +37,7 @@
 
 <p><a href="http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de">http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de</a>  </p>
 
-<p>In Adlib Designer, geef je de external source voor je termen (bijvoorbeeld Objectnaam, Object categorie of Trefwoord) voor elk veld in tabblad <em>Linked field properties</em>, box <em>External sources</em>, veld  <em>Path to URL</em>. Voor Nederlands geef je dit:  </p>
+<p>In Adlib Designer geef je de <em>external source</em> voor je termen (bijvoorbeeld Objectnaam, Object categorie of Trefwoord) voor elk veld in tabblad <em>Linked field properties</em>, box <em>External sources</em>, veld  <em>Path to URL</em>. Voor Nederlands geef je dit:  </p>
 
 <pre><code>http://service.adlibug.nl/aat/search?term=%data%
 </code></pre>
@@ -144,3 +144,14 @@ c. Als je ervoor kiest om in je thesaurus een aparte veldgroep aan te maken voor
 <p>Zie onderstaand plaatje. Het begint met een term die je invoert in een thesaurus-veld in Adlib. De service verpakt die term in een SPARQL-query-url, en stuurt die naar de AAT van het SPARQL-endpoint van Getty Vocabularies. Die geeft antwoord in json. De service zet dat antwoord om in Adlib-XML. Daarmee zijn velden in het antwoord direct bruikbaar in Adlib.  </p>
 
 <p><img src="/static/gvp2ax2.jpg" alt="Hoe werkt de service" title="Interface tussen Getty Vocabularies en Adlib. Van linksboven met de klok mee: een term ingevoerd in een gevalideerd veld wordt verpakt in een query die naar het SPARQL-endpoint van Getty Vocabularies gaat. Het antwoord in json wordt verwerkt tot Adlib XML en is daarmee direct beschikbaar in de thesaurus." />  </p>
+
+<h4>Colofon</h4>
+
+<ul>
+<li>Project van <a href="http://www.rolfblijleven.nl">Rolf Blijleven</a>. Contact: <a href="https://twitter.com/RolfBly">@RolfBly</a> </li>
+<li>Hosting door <a href="https://www.pythonanywhere.com">PythonAnywhere</a></li>
+</ul>
+
+<p>Met dank aan he;t support team van het <a href="https://groups.google.com/forum/#!forum/gettyvocablod">Getty Vocabularies Project</a> en aan de overige leden van het bestuur van de Adlib Gebruikersgroep. </p>
+
+<p>De code voor dit project is open source software, beschikbaar via <a href="https://github.com/RolfBly/gv2ax">Github</a> onder een <a href="https://choosealicense.com/licenses/gpl-3.0/">GNU General Public Licentie versie 3.0</a>. </p>
