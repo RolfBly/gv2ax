@@ -26,7 +26,7 @@ Een zoekopdracht heet een query-URL, die ziet er zo uit:
 
 [http://service.adlibug.nl/aat/search?term=fiets][3]  
 
-Probeer het maar! Standaard zoekt de service naar **Nederlandse** termen. **Engel"**, **Frans** en **Duits** zijn ook mogelijk. Dat kun je opgeven in de query-URL:  
+Probeer het maar! Standaard zoekt de service naar **Nederlandse** termen. **Engels**, **Frans** en **Duits** zijn ook mogelijk. Dat kun je opgeven in de query-URL:  
 
 [http://service.adlibug.nl/aat/search?term=bicycle&lang=en][4]  
     
@@ -89,12 +89,15 @@ Zie onderstaand plaatje. Het begint met een term die je invoert in een thesaurus
 
 #### Colofon
 
-- Project van [Rolf Blijleven][8]. Contact: [@RolfBly][9] 
-- Hosting door [PythonAnywhere][10]
+- Project van [Rolf Blijleven][8], contact [@RolfBly][9]. 
+- Hosting door [PythonAnywhere][10].
 
-Met dank aan he;t support team van het [Getty Vocabularies Project][13] en aan de overige leden van het bestuur van de Adlib Gebruikersgroep. 
+Met dank aan het support team van het [Getty Vocabularies Project][13] en aan de overige leden van het bestuur van de Adlib Gebruikersgroep. 
 
 De code voor dit project is open source software, beschikbaar via [Github][11] onder een [GNU General Public Licentie versie 3.0][12]. 
+
+<br>
+<br>
 
 [8]: http://www.rolfblijleven.nl
 [9]: https://twitter.com/RolfBly

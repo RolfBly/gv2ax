@@ -90,12 +90,15 @@ Refer to the image below. Clockwise from top left, we start with a term that you
 
 #### Credits  
 
-- Project by [Rolf Blijleven][8]. Contact: [@RolfBly][9]  
-- Hosting: [PythonAnywhere][10]  
+- Project by [Rolf Blijleven][8], contact [@RolfBly][9].  
+- Hosting by [PythonAnywhere][10].  
 
 Thanks to the support team at the [Getty Vocabularies Project][13] and to the other members of the board of the Dutch Adlib User group.  
 
 The code for this project is open source software available via [Github][11] under a [GNU General Public License version 3.0][12].  
+
+<br>
+<br>
 
 [8]: http://www.rolfblijleven.nl  
 [9]: https://twitter.com/RolfBly  
