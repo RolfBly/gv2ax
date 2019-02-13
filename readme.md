@@ -19,7 +19,7 @@ the Free Software Foundation.
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-[GNU General Public License version 3][1] or the LICENSE file 
+[GNU General Public License version 3][1] or the COPYING file 
 in this repository for more details. 
 
 [1]: https://choosealicense.com/licenses/gpl-3.0/
