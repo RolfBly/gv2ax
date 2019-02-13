@@ -89,5 +89,16 @@ Zie onderstaand plaatje. Het begint met een term die je invoert in een thesaurus
 
 #### Colofon
 
-Auteur: [Rolf Blijleven][8]
-<div><small>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></small></div>
+- Service, documentatie en deze site gemaakt door [Rolf Blijleven][8]. Contact: [@RolfBly][9] 
+- Hosting: [PythonAnywhere][10]
+
+Met dank aan het support team van het [Getty Vocabularies Project][13] en aan de overige leden van het bestuur van de Adlib Gebruikersgroep. 
+
+De code voor dit project is _open source_ software, beschikbaar via [Github][11] onder een [GNU General Public Licentie versie 3.0][12]. 
+
+[8]: http://www.rolfblijleven.nl
+[9]: https://twitter.com/RolfBly
+[10]: https://www.pythonanywhere.com
+[11]: https://github.com/RolfBly/gv2ax
+[12]: https://choosealicense.com/licenses/gpl-3.0/
+[13]: https://groups.google.com/forum/#!forum/gettyvocablod

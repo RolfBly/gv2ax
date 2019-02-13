@@ -90,5 +90,16 @@ Refer to the image below. Clockwise from top left, we start with a term that you
 
 #### Credits
 
-Author: [Rolf Blijleven][8]
-<div><small>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></small></div>
+- Service, documentation and this site made by [Rolf Blijleven][8]. Contact: [@RolfBly][9] 
+- Hosting: [PythonAnywhere][10]
+
+Thanks to the support team at the [Getty Vocabularies Project][13] and to the other members of the board of the Dutch Adlib User group.
+
+The code for this project is open source software available via [Github][11] under a [GNU General Public License version 3.0][12]. 
+
+[8]: http://www.rolfblijleven.nl
+[9]: https://twitter.com/RolfBly
+[10]: https://www.pythonanywhere.com
+[11]: https://github.com/RolfBly/gv2ax
+[12]: https://choosealicense.com/licenses/gpl-3.0/
+[13]: https://groups.google.com/forum/#!forum/gettyvocablod
