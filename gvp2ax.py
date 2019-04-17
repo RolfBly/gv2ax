@@ -35,7 +35,7 @@ def AAT(search_term, language='nl', pretty=False):
     def fetch(field_name):
         return record[field_name]['value']
     
-    URL = '''http://vocab.getty.edu/sparql.json?query=SELECT * WHERE {{?subject skos:inScheme <http://vocab.getty.edu/aat/> . ?subject luc:term "{0}*"; xl:prefLabel|xl:altLabel ?Getty_ID . ?Getty_ID dct:language gvp_lang:{1}; xl:literalForm ?term; gvp:termType ?term_type FILTER regex(?term, '^{0}', 'i') OPTIONAL {{?subject gvp:broaderPreferred ?broader_Getty_ID . ?broader_Getty_ID xl:prefLabel [dct:language gvp_lang:{1}; xl:literalForm ?broader_term]}} OPTIONAL {{?subject skos:scopeNote [dct:language gvp_lang:{1}; rdf:value ?scope_note]}} OPTIONAL {{?Getty_ID rdfs:comment ?history_note}} OPTIONAL {{?Getty_ID gvp:estStart ?est_start}} OPTIONAL {{?Getty_ID gvp:estEnd ?est_end}} }} ORDER BY ?term LIMIT 20'''  
+    URL = '''http://vocab.getty.edu/sparql.json?query=SELECT * WHERE {{?subject skos:inScheme <http://vocab.getty.edu/aat/> . ?subject luc:term "{0}*"; xl:prefLabel|xl:altLabel ?Getty_ID . ?Getty_ID dct:language gvp_lang:{1}; xl:literalForm ?term; gvp:termType ?term_type FILTER regex(?term, "^{0}", 'i') OPTIONAL {{?subject gvp:broaderPreferred ?broader_Getty_ID . ?broader_Getty_ID xl:prefLabel [dct:language gvp_lang:{1}; xl:literalForm ?broader_term]}} OPTIONAL {{?subject skos:scopeNote [dct:language gvp_lang:{1}; rdf:value ?scope_note]}} OPTIONAL {{?Getty_ID rdfs:comment ?history_note}} OPTIONAL {{?Getty_ID gvp:estStart ?est_start}} OPTIONAL {{?Getty_ID gvp:estEnd ?est_end}} }} ORDER BY ?term LIMIT 20'''  
     
     #  "vars" : [ "subject", "Getty_ID", "term, "term_type", "broader_Getty_ID", "broader_term", "scope_note", "history_note", "est_start", "est_end" ]  
     
@@ -53,13 +53,17 @@ def AAT(search_term, language='nl', pretty=False):
     for record in gvp_json['results']['bindings']:
         term_type_uri = fetch('term_type')
         term_type = term_type_uri.rsplit('/', 1)[1]
-        subject = fetch('subject').replace('aat/', 'page/aat/')
+        subject_uri = fetch('subject')      # machine readable Getty page
+        subject_url = fetch('subject').replace('aat/', 'page/aat/')     # human readable Getty page
         xmlrec = E.record(  
             E.term(fetch('term')),
-            E.Getty_ID(subject),
+            E.Getty_ID(subject_uri),
+            E.Getty_url(subject_url), 
         )
-        xmlrec.append(E('source.number', subject))
-        xmlrec.append(E('term.number', subject))
+        xmlrec.append(E('source.number', subject_url))
+        xmlrec.append(E('source.number', subject_uri))
+        xmlrec.append(E('term.number', subject_url)) # compatible with Adlib app v 4.2
+        xmlrec.append(E('term.number', subject_uri)) # compatible with Adlib app v 4.2
         xmlrec.append(E.term_type(term_type))
         xmlrec.append(E.term_type_uri(term_type_uri))
         xmlrec.append(E.source('Getty Vocabularies AAT, CC-BY license'))

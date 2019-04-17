@@ -8,6 +8,11 @@ For more information, see templates/index_content_en.html (English) or templates
 
 Gv2ax can run as a local service using Flask's built in test server. Not recommended for production. You will need a virtual Python 3.7 environment with Flask, requests and lxml. See requirements.txt. 
 
+### todo
+
+- redo intro video, as 'portret' is a bad object name
+- add video for various ways of using the service in Adlib
+
 ### License
 
 Copyright 2019 Rolf Blijleven

@@ -52,15 +52,16 @@ The answer to the query may contain any of the fields below.
 |veldnaam       |content|standard Adlib|tag|
 |---------------|------|---------------|---|
 |`term`         |the term found|yes|`te`|
-|`source.number`|URL of the concept in Getty Vocabularies|yes, see 1a. |`tn`|
-|`term.number`  |URL of the concept in Getty Vocabularies|yes, see 1b. |`tn`|
-|`Getty_ID`     |URL of the concept in Getty Vocabularies|yes, see 1c. ||
+|`source.number`|URL and URI<sup>4</sup> of the concept in Getty Vocabularies |yes, see 1a. |`tn`|
+|`term.number`  |URL and URI<sup>4</sup> of the concept in Getty Vocabularies|yes, see 1b. |`tn`|
+|`Getty_ID`     |URI<sup>4</sup> of the concept in Getty Vocabularies|yes, see 1c. ||
+|`Getty_url`    |URL<sup>4</sup> of the concept in Getty Vocabularies|yes, see 1c. ||
 |`source`       |'Getty Vocabularies AAT, CC-BY license', always|yes|`br`|
 |`scope_note`   |Scope note|yes|`sn`|
 |`history_note` |Historical note|yes|`hn`|
 |`term_type`    |_term type_ in Getty Vocabularies|no, see 2.||
 |`term_type_uri`|link to term_type in Getty Vocabularies|no, see 2.||
-|`broader.term` |Getty Vocabularies' _Preferred broader term_ of the term found|yes, zie 3.|`bt`|
+|`broader.term` |Getty Vocabularies' _Preferred broader term_ of the term found|yes, see 3.|`bt`|
 
 
 ### notes  
@@ -72,6 +73,8 @@ The answer to the query may contain any of the fields below.
 2. Your Adlib thesaurus has a field _term type_ (`term.type`) for the term's domain (e.g. _creator_ or _material type_). In Getty Vocabularies, `term_type` is more a term _term status_, but it's values do not correspond to what's in Adlib. Hence, this field could be used for orientation, but copying it into a thesaurus record isn't very useful. Likewise for `term_type_uri`.  
 
 3. Whether or not Getty's Broader Preferred term is suitable for your collection, your thesaurus, depends on your collection.  
+
+4. For the sake of simplicity, we call a 'URL' [human-readable][8], and a 'URI' [machine-readable][9]. The service provides both.  
 
 <br>  
 
@@ -87,6 +90,8 @@ Refer to the image below. Clockwise from top left, we start with a term that you
 [5]: http://service.adlibug.nl/aat/search?term=bicyclette&lang=fr  
 [6]: http://service.adlibug.nl/aat/search?term=fahrrad&lang=de  
 [7]: /static/gvp2ax2.jpg  "Interface between Getty Vocabularies AAT and Adlib. Clockwise from top left, a term that you enter in a catalogue record, is wrapped in a SPARQL-query and sent to Getty Vocabularies SPARQL endpoint. The response in json is turned into Adlib XML and made available in the Adlib thesaurus linked to your catalogue."  
+[8]: http://vocab.getty.edu/page/aat/300212636
+[9]: http://vocab.getty.edu/aat/300212636
 
 #### Credits  
 

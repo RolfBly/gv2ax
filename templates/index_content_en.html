@@ -71,19 +71,25 @@
 </tr>
 <tr>
   <td><code>source.number</code></td>
-  <td>URL of the concept in Getty Vocabularies</td>
+  <td>URL and URI<sup>4</sup> of the concept in Getty Vocabularies</td>
   <td>yes, see 1a.</td>
   <td><code>tn</code></td>
 </tr>
 <tr>
   <td><code>term.number</code></td>
-  <td>URL of the concept in Getty Vocabularies</td>
+  <td>URL and URI<sup>4</sup> of the concept in Getty Vocabularies</td>
   <td>yes, see 1b.</td>
   <td><code>tn</code></td>
 </tr>
 <tr>
   <td><code>Getty_ID</code></td>
-  <td>URL of the concept in Getty Vocabularies</td>
+  <td>URI<sup>4</sup> of the concept in Getty Vocabularies</td>
+  <td>yes, see 1c.</td>
+  <td></td>
+</tr>
+<tr>
+  <td><code>Getty_url</code></td>
+  <td>URL<sup>4</sup> of the concept in Getty Vocabularies</td>
   <td>yes, see 1c.</td>
   <td></td>
 </tr>
@@ -120,7 +126,7 @@
 <tr>
   <td><code>broader.term</code></td>
   <td>Getty Vocabularies' <em>Preferred broader term</em> of the term found</td>
-  <td>yes, zie 3.</td>
+  <td>yes, see 3.</td>
   <td><code>bt</code></td>
 </tr>
 </tbody>
@@ -135,6 +141,7 @@ b. Application version 3.4 and 4.2 have the field <code>term.number</code>, tag 
 c. Should you choose to create a separate field group for the fields you derive with this service, then you should create a field with the data dictionary name Getty_ID, of the type Application.  </p></li>
 <li><p>Your Adlib thesaurus has a field <em>term type</em> (<code>term.type</code>) for the term's domain (e.g. <em>creator</em> or <em>material type</em>). In Getty Vocabularies, <code>term_type</code> is more a term <em>term status</em>, but it's values do not correspond to what's in Adlib. Hence, this field could be used for orientation, but copying it into a thesaurus record isn't very useful. Likewise for <code>term_type_uri</code>.  </p></li>
 <li><p>Whether or not Getty's Broader Preferred term is suitable for your collection, your thesaurus, depends on your collection.  </p></li>
+<li><p>For the sake of simplicity, we call a 'URL' <a href="http://www.rolfblijleven.nl">human-readable</a>, and a 'URI' <a href="https://twitter.com/RolfBly">machine-readable</a>. The service provides both.  </p></li>
 </ol>
 
 <p><br>  </p>

@@ -10,8 +10,8 @@ De service is bedoeld als een zogenaamde _Advanced External Source_ in Adlib. Om
 
 #### Wat doet het?  
 
-Hoe het werkt voor gebruikers is te zien in deze video. 
-<iframe src="https://player.vimeo.com/video/314264717" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+Hoe het werkt voor gebruikers is te zien in deze video.  
+<iframe src="https://player.vimeo.com/video/314264717" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  
 #### Wat moet je aanpassen in Adlib?  
 
 In [dit document][1] (Engels) is beschreven hoe je Adlib kunt aanpassen. Enige bekendheid met de bediening van Adlib Designer is noodzakelijk.  
@@ -51,9 +51,10 @@ Het antwoord op deze query kan onderstaande velden bevatten.
 |veldnaam       |inhoud|standaard Adlib|tag|
 |---------------|------|---------------|---|
 |`term`         |de gevonden term|ja|`te`|
-|`source.number`|URL van de term in Getty Vocabularies|ja, zie 1a. |`tn`|
-|`term.number`  |URL van de term in Getty Vocabularies|ja, zie 1b. |`tn`|
-|`Getty_ID`     |URL van de term in Getty Vocabularies|nee, zie 1c. ||
+|`source.number`|URL en URI<sup>4</sup> van de term in Getty Vocabularies|ja, zie 1a. |`tn`|
+|`term.number`  |URL en URI<sup>4</sup> van de term in Getty Vocabularies|ja, zie 1b. |`tn`|
+|`Getty_ID`     |URI<sup>4</sup> van de term in Getty Vocabularies|nee, zie 1c. ||
+|`Getty_url`    |URL<sup>4</sup> van de term in Getty Vocabularies|nee, zie 1c. ||
 |`source`       |'Getty Vocabularies AAT, CC-BY license', altijd|ja|`br`|
 |`scope_note`   |Scope note|ja|`sn`|
 |`history_note` |historische notitie|ja|`hn`|
@@ -72,6 +73,7 @@ Het antwoord op deze query kan onderstaande velden bevatten.
 
 3. Of je Getty's Broader Preferred term al dan niet moet overnemen in je eigen thesaurus, hangt sterk af van je collectie.  
 
+4. Gemakshalve noemen we een 'URL' [_human-readable_][8], en een 'URI' [_machine-readable_][9]. De service geeft beiden.  
 <br>  
 
 #### Hoe werkt het?  
@@ -80,28 +82,28 @@ Zie onderstaand plaatje. Het begint met een term die je invoert in een thesaurus
 
 ![Hoe werkt de service][7]  
 
-[1]: /static/Advanced_external_source_v_service.adlibug.nl.pdf
+[1]: /static/Advanced_external_source_v_service.adlibug.nl.pdf  
 [3]: http://service.adlibug.nl/aat/search?term=fiets  
 [4]: http://service.adlibug.nl/aat/search?term=bicycle&lang=en  
 [5]: http://service.adlibug.nl/aat/search?term=bicyclette&lang=fr  
 [6]: http://service.adlibug.nl/aat/search?term=fahrrad&lang=de  
 [7]: /static/gvp2ax2.jpg  "Interface tussen Getty Vocabularies en Adlib. Van linksboven met de klok mee: een term ingevoerd in een gevalideerd veld wordt verpakt in een query die naar het SPARQL-endpoint van Getty Vocabularies gaat. Het antwoord in json wordt verwerkt tot Adlib XML en is daarmee direct beschikbaar in de thesaurus."  
 
-#### Colofon
+#### Colofon  
 
-- Project van [Rolf Blijleven][8], contact [@RolfBly][9]. 
-- Hosting door [PythonAnywhere][10].
+- Project van [Rolf Blijleven][8], contact [@RolfBly][9].  
+- Hosting door [PythonAnywhere][10].  
 
-Met dank aan het support team van het [Getty Vocabularies Project][13] en aan de overige leden van het bestuur van de Adlib Gebruikersgroep. 
+Met dank aan het support team van het [Getty Vocabularies Project][13] en aan de overige leden van het bestuur van de Adlib Gebruikersgroep.  
 
-De code voor dit project is open source software, beschikbaar via [Github][11] onder een [GNU General Public Licentie versie 3.0][12]. 
+De code voor dit project is open source software, beschikbaar via [Github][11] onder een [GNU General Public Licentie versie 3.0][12].  
 
-<br>
-<br>
+<br>  
+<br>  
 
-[8]: http://www.rolfblijleven.nl
-[9]: https://twitter.com/RolfBly
-[10]: https://www.pythonanywhere.com
-[11]: https://github.com/RolfBly/gv2ax
-[12]: https://choosealicense.com/licenses/gpl-3.0/
-[13]: https://groups.google.com/forum/#!forum/gettyvocablod
+[8]: http://www.rolfblijleven.nl  
+[9]: https://twitter.com/RolfBly  
+[10]: https://www.pythonanywhere.com  
+[11]: https://github.com/RolfBly/gv2ax  
+[12]: https://choosealicense.com/licenses/gpl-3.0/  
+[13]: https://groups.google.com/forum/#!forum/gettyvocablod  
