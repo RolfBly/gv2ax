@@ -74,7 +74,7 @@ The answer to the query may contain any of the fields below.
 
 3. Whether or not Getty's Broader Preferred term is suitable for your collection, your thesaurus, depends on your collection.  
 
-4. For the sake of simplicity, we call a 'URL' [human-readable][8], and a 'URI' [machine-readable][9]. The service provides both.  
+4. For the sake of simplicity, we call a 'URL' [human-readable][14], and a 'URI' [machine-readable][15]. The service provides both.  
 
 <br>  
 
@@ -90,8 +90,8 @@ Refer to the image below. Clockwise from top left, we start with a term that you
 [5]: http://service.adlibug.nl/aat/search?term=bicyclette&lang=fr  
 [6]: http://service.adlibug.nl/aat/search?term=fahrrad&lang=de  
 [7]: /static/gvp2ax2.jpg  "Interface between Getty Vocabularies AAT and Adlib. Clockwise from top left, a term that you enter in a catalogue record, is wrapped in a SPARQL-query and sent to Getty Vocabularies SPARQL endpoint. The response in json is turned into Adlib XML and made available in the Adlib thesaurus linked to your catalogue."  
-[8]: http://vocab.getty.edu/page/aat/300212636
-[9]: http://vocab.getty.edu/aat/300212636
+[14]: http://vocab.getty.edu/page/aat/300212636
+[15]: http://vocab.getty.edu/aat/300212636
 
 #### Credits  
 

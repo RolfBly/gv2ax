@@ -18,7 +18,7 @@ def index_EN():
     return render_template('index_EN.html')    
 
 @app.route('/aat/search')
-def search():
+def search_aat():
     term = request.args.get('term', default='')
     lang = request.args.get('lang', default='nl').lower()
     if lang not in valid_langs:

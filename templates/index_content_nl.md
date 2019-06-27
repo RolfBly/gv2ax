@@ -73,7 +73,7 @@ Het antwoord op deze query kan onderstaande velden bevatten.
 
 3. Of je Getty's Broader Preferred term al dan niet moet overnemen in je eigen thesaurus, hangt sterk af van je collectie.  
 
-4. Gemakshalve noemen we een 'URL' [_human-readable_][8], en een 'URI' [_machine-readable_][9]. De service geeft beiden.  
+4. Gemakshalve noemen we een 'URL' [_human-readable_][14], en een 'URI' [_machine-readable_][15]. De service geeft beiden.  
 <br>  
 
 #### Hoe werkt het?  
@@ -88,6 +88,8 @@ Zie onderstaand plaatje. Het begint met een term die je invoert in een thesaurus
 [5]: http://service.adlibug.nl/aat/search?term=bicyclette&lang=fr  
 [6]: http://service.adlibug.nl/aat/search?term=fahrrad&lang=de  
 [7]: /static/gvp2ax2.jpg  "Interface tussen Getty Vocabularies en Adlib. Van linksboven met de klok mee: een term ingevoerd in een gevalideerd veld wordt verpakt in een query die naar het SPARQL-endpoint van Getty Vocabularies gaat. Het antwoord in json wordt verwerkt tot Adlib XML en is daarmee direct beschikbaar in de thesaurus."  
+[14]: http://vocab.getty.edu/page/aat/300212636  
+[15]: http://vocab.getty.edu/aat/300212636  
 
 #### Colofon  
 
