@@ -90,7 +90,7 @@ def AAT(search_term, language='nl', pretty=False):
         except KeyError:  
             estEnd = ''
 
-        print(history_note, estStart, estEnd)
+        # print(history_note, estStart, estEnd)
             
         if history_note != '':
             if (
@@ -120,5 +120,6 @@ def main():
         xml = AAT(term, language.get('language', 'nl'), pretty=True)   
         with open('{}.xml'.format(term), 'wb') as f:
             f.write(xml)
+            
 if __name__ == "__main__":  
     main()  

@@ -1,0 +1,181 @@
+<h2>WO2-thesaurus in Adlib</h2>
+
+<p>De webservice van de Adlib Gebruikersgroep kan ook dienen als Advanced External Source voor de WO2-thesaurus van het Nederlands Instituut voor Oorlogsdocumentatie (NIOD). Het werkt op dezelfde manier als bij de <a href="/">Getty AAT service</a>. <a href="/static/Advanced_external_source_v_service.adlibug.nl.pdf">Dit document</a> (Engels) zet uiteen hoe je Adlib daarvoor kunt aanpassen. Enige bekendheid met de bediening van Adlib Designer is noodzakelijk.  </p>
+
+<p>De WO2 thesaurus bevragen gaat met een URL. Dat kan vanuit Adlib, of rechtstreeks vanuit een browser. Probeer maar! </p>
+
+<p><a href="/wo2/search?term=belasting">http://service.adlibug.nl/wo2/search?term=belasting</a>  </p>
+
+<p>Engels (en) en Duits (de) zijn ook mogelijk:  </p>
+
+<p><a href="/wo2/search?term=transport&amp;lang=en">http://service.adlibug.nl/wo2/search?term=transport&amp;lang=en</a>  </p>
+
+<p><a href="/wo2/search?term=fahrrad&amp;lang=de">http://service.adlibug.nl/wo2/search?term=fahrrad&amp;lang=de</a>  </p>
+
+<p>Voor de werkwijze in Adlib zie verder de <a href="/">handleiding bij de AAT-interface</a>.  </p>
+
+<h3>mapping</h3>
+
+<p>Onderstaande velden zijn beschikbaar. Het is technisch mogelijk om geografische coördinaten en een afbeelding op te halen uit de WO2-thesaurus. Dat is wellicht voor een toekomstige implementatie.  </p>
+
+<table>
+<thead>
+<tr>
+  <th>Query veldnaam</th>
+  <th>wat is het</th>
+  <th>Adlib XML veldnaam</th>
+  <th>Standaard Adlib</th>
+  <th>tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>WO2_URL</td>
+  <td>URL voor de term</td>
+  <td>source.number</td>
+  <td>ja, zie 1a</td>
+  <td>tn</td>
+</tr>
+<tr>
+  <td>WO2_URL</td>
+  <td>URL voor de term</td>
+  <td>term.number</td>
+  <td>ja, zie 1b</td>
+  <td>tn</td>
+</tr>
+<tr>
+  <td>WO2_URL</td>
+  <td>URL voor de term</td>
+  <td>WO2_URL</td>
+  <td>nee, zie 1 c</td>
+  <td>WU</td>
+</tr>
+<tr>
+  <td>prefLabel</td>
+  <td>de voorkeursterm</td>
+  <td>term</td>
+  <td>ja</td>
+  <td>te</td>
+</tr>
+<tr>
+  <td>label</td>
+  <td>de term waarmee gezocht is</td>
+  <td>used_for</td>
+  <td>ja, maar zie 3</td>
+  <td>uf</td>
+</tr>
+<tr>
+  <td>altlabel</td>
+  <td>alternatieve term</td>
+  <td>used_for</td>
+  <td>ja, maar zie 3</td>
+  <td>uf</td>
+</tr>
+<tr>
+  <td>scopeNote</td>
+  <td>scope note</td>
+  <td>scope_note</td>
+  <td>ja</td>
+  <td>sn</td>
+</tr>
+<tr>
+  <td>scopeNote</td>
+  <td>scope note</td>
+  <td><code>WO2_scope_note</code></td>
+  <td>nee, zie 1 c</td>
+  <td>WN</td>
+</tr>
+<tr>
+  <td>broader</td>
+  <td>URL naar de broader term</td>
+  <td></td>
+  <td>niet bruikbaar, zie 2</td>
+  <td></td>
+</tr>
+<tr>
+  <td>broaderLabel</td>
+  <td>broader term</td>
+  <td>broader.term</td>
+  <td>ja, maar zie 3</td>
+  <td>bt</td>
+</tr>
+</tbody>
+</table>
+
+<h4>noten</h4>
+
+<ol>
+<li><p>Deze URL is een unieke, persistente identifier in de vorm van een internet-link naar het WO2-thesaurusrecord voor de term. In welk veld zet je die? <br />
+a. Applicatie-versie 4.5 heeft standaard een veld <code>source.number</code> met tag <code>tn</code> van het data-type <em>Application</em>. <br />
+b. Applicatie-versies 3.4 en 4.2 bevatten standaard het veld <code>term.number</code> met tag <code>tn</code>, van het data-type <em>Text</em>. Meestal wil je een hyperlink aanklikbaar hebben, dus dan moet het data-type van dat veld <em>Application</em> worden. <br />
+c. Als je ervoor kiest om in je thesaurus een aparte veldgroep aan te maken voor de velden die je ophaalt uit de WOII-thesaurus, dan moeten de Engelstalige data-dictionary-namen identiek zijn aan de veldnamen die de interface geeft.  </p></li>
+<li><p>Via een Advanced External Source kun je alleen de velden van één enkel thesaurus-record vullen of updaten, niet de velden van een daaraan gekoppeld record (of dat te omzeilen is moet nog worden onderzocht). Daarom worden uri's van de broaders nog niet opgevraagd.  </p></li>
+<li><p>Broaders dienen primair voor context. Of ze al dan niet kloppen in de context van een gegeven collectie, is aan de beheerders van die collectie. Termen in de WO2-thesaurus kunnen meerdere bredere (voorkeurs)termen hebben, wat in Adlib tot even zo veel gekoppelde records zou leiden. (Daarom geven we ook geen narrowers, want dat kunnen er tientallen zijn.) <br />
+Binnen Adlib (in het linkscherm <em>vindt gekoppeld record</em>) kun je alleen de eerste broader naast de term laten zien (bij wijze van context). Of die term al dan niet geïmporteerd wordt, staat daar los van. Maar als je broaders importeert, dan worden ze ook <em>allemaal</em> geïmporteerd.  </p></li>
+</ol>
+
+<h2>Query</h2>
+
+<p>De vraag aan het SPARQL-endpoint van de WO2-thesaurus.  </p>
+
+<h3><code>CONSTRUCT</code></h3>
+
+<ul>
+<li><p>we geven op welke velden we terug willen zien.  </p>
+
+<p>In eerste instantie zochten we behalve naar pref- en altLabels ook naar hiddenLabels (bijvoorbeeld 'negers' geeft 'Afro-Amerikanen') om zo de gebruiker naar de juiste term te leiden. Echter, 'Afro-Amerikanen' is een deelverzameling van 'negers', en <em>"[hiddenLabels] is niet altijd betrouwbaar ingevuld."</em> aldus NIOD. Daarom is hiddenLabel toch geschrapt. Het was:  </p>
+
+<pre><code>?Concept skos:prefLabel ?prefLabel ;  
+        skos:prefLabel|skos:altLabel|skos:hiddenLabel ?label .
+</code></pre>
+
+<p>het werd:  </p>
+
+<pre><code>?Concept skos:prefLabel ?prefLabel ;  
+        skos:prefLabel|skos:altLabel ?label .
+</code></pre></li>
+<li><p>De WO2-Thesaurus staat meerdere broaders per prefLabel toe (per term is er niet slechts één enkele broaderPreferred, zoals in de Getty AAT). Bijvoorbeeld 'Baros' is prefLabel met altLabel "Baros III van velden", en het heeft 4 broaders. Als platte tabel levert elke permutatie een regel, dus een WHERE-query levert 8 regels of json- of XML-nodes in totaal. Die kun je in de interface wel weer groeperen, maar we willen zoveel mogelijk werk door SPARQL laten doen. Onderstaande query antwoordt met een Adlib-achtige datastructuur. We halen alle WO2-velden op in SKOS-xml, die we met een XSLT-transformatie omzetten naar AdlibXML. </p></li>
+</ul>
+
+<p>(Je kunt de query copy-pasten in het <a href="https://data.niod.nl/PoolParty/sparql/WO2_Thesaurus?">SPARQL-endpoint</a> en er verder mee experimenteren.)  </p>
+
+<pre><code>PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;  
+
+CONSTRUCT {  
+    ?Concept skos:Concept ?Concept ;  
+       skos:prefLabel ?prefLabel ;  
+       skos:scopeNote ?scopeNote ;  
+       skos:altLabel ?altLabel ;  
+       skos:broaderLabel ?broaderLabel .  
+}  
+WHERE {  
+    ?Concept skos:prefLabel ?prefLabel ;  
+         skos:prefLabel|skos:altLabel ?label .  
+    FILTER (lang(?prefLabel)="nl" &amp;&amp;  
+            lang(?label)="nl" &amp;&amp;  
+            strstarts(LCASE(?label), LCASE("kindertehuis"))  
+            )  
+    OPTIONAL {?Concept skos:altLabel ?altLabel }  
+    OPTIONAL {?Concept skos:scopeNote ?scopeNote  
+               FILTER(lang(?scopeNote)="nl")  }  
+    OPTIONAL {?Concept skos:broader ?broader .  
+              ?broader skos:prefLabel ?broaderLabel  
+              FILTER(lang(?broaderLabel)="nl")  }  
+} ORDER BY ?prefLabel LIMIT 20
+</code></pre>
+
+<hr />
+
+<h3>Colofon</h3>
+
+<p>Dit gedeelte van de service.adlibug.nl is tot stand gekomen met ondersteuning van Nederlands Instituut voor OorlogsDocumentatie. Met dank aan Lizzy Jongma (NIOD) en Joop Vanderheijden (Rijksdienst Cultureel Erfgoed).  </p>
+
+<ul>
+<li>Project van <a href="http://www.rolfblijleven.nl">Rolf Blijleven</a>, contact <a href="https://twitter.com/RolfBly">@RolfBly</a>.  </li>
+<li>Hosting door <a href="https://www.pythonanywhere.com">PythonAnywhere</a>.  </li>
+</ul>
+
+<p>De code voor dit project is open source software, beschikbaar via <a href="https://github.com/RolfBly/gv2ax">Github</a> onder een <a href="https://choosealicense.com/licenses/gpl-3.0/">GNU General Public Licentie versie 3.0</a>.  </p>
+
+<p><br> <br />
+<br>  </p>
