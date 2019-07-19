@@ -23,7 +23,9 @@ Voor de werkwijze in Adlib zie verder de [handleiding bij de AAT-interface][3].
 
 ### mapping  
 
-Onderstaande velden zijn beschikbaar. Het is technisch mogelijk om geografische coördinaten en een afbeelding op te halen uit de WO2-thesaurus. Dat is wellicht voor een toekomstige implementatie.  
+Opmerking: hoewel het technisch mogelijk is om ook geografische coördinaten (van plaatsen) en een afbeelding (van begrippen) op te halen uit de WO2-thesaurus, voorziet de interface daar vooralsnog niet in. Als er vraag naar is, kan dat gemaakt worden. 
+
+Onderstaande velden zijn beschikbaar. 
 
 | Query veldnaam | wat is het                 | Adlib XML veldnaam  | Standaard Adlib       | tag |
 |----------------|----------------------------|---------------------|-----------------------|-----|
