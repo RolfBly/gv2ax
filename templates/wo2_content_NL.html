@@ -120,12 +120,10 @@ Binnen Adlib (in het linkscherm <em>vindt gekoppeld record</em>) kun je alleen d
 
 <p>De vraag aan het SPARQL-endpoint van de WO2-thesaurus.  </p>
 
-<h3><code>CONSTRUCT</code></h3>
-
 <ul>
-<li><p>we geven op welke velden we terug willen zien.  </p>
+<li><p>we geven op welke velden we terug willen zien. <code>Concept</code>, <code>prefLabel</code>, <code>scopeNote</code>, <code>altLabel</code> en <code>broaderLabel</code>. </p>
 
-<p>In eerste instantie zochten we behalve naar pref- en altLabels ook naar hiddenLabels (bijvoorbeeld 'negers' geeft 'Afro-Amerikanen') om zo de gebruiker naar de juiste term te leiden. Echter, 'Afro-Amerikanen' is een deelverzameling van 'negers', en <em>"[hiddenLabels] is niet altijd betrouwbaar ingevuld."</em> aldus NIOD. Daarom is hiddenLabel toch geschrapt. Het was:  </p>
+<p>In eerste instantie zochten we behalve naar <code>prefLabels</code> en <code>altLabels</code> ook naar <code>hiddenLabels</code>. Bijvoorbeeld het zoekwoord 'negers' geeft 'Afro-Amerikanen'. Het idee was dat de gebruiker naar de juiste term wordt geleid. Echter, het begrip 'negers' is veel breder dan 'Afro-Amerikanen'. <em>"[HiddenLabel] is niet altijd betrouwbaar ingevuld."</em> aldus NIOD. Daarom is dat toch geschrapt. Het was:  </p>
 
 <pre><code>?Concept skos:prefLabel ?prefLabel ;  
         skos:prefLabel|skos:altLabel|skos:hiddenLabel ?label .
@@ -136,7 +134,7 @@ Binnen Adlib (in het linkscherm <em>vindt gekoppeld record</em>) kun je alleen d
 <pre><code>?Concept skos:prefLabel ?prefLabel ;  
         skos:prefLabel|skos:altLabel ?label .
 </code></pre></li>
-<li><p>De WO2-Thesaurus staat meerdere broaders per prefLabel toe (per term is er niet slechts één enkele broaderPreferred, zoals in de Getty AAT). Bijvoorbeeld 'Baros' is prefLabel met altLabel "Baros III van velden", en het heeft 4 broaders. Als platte tabel levert elke permutatie een regel, dus een WHERE-query levert 8 regels of json- of XML-nodes in totaal. Die kun je in de interface wel weer groeperen, maar we willen zoveel mogelijk werk door SPARQL laten doen. Onderstaande query antwoordt met een Adlib-achtige datastructuur. We halen alle WO2-velden op in SKOS-xml, die we met een XSLT-transformatie omzetten naar AdlibXML. </p></li>
+<li><p>De WO2-Thesaurus staat meerdere broaders per prefLabel toe (per term is er niet slechts één enkele broaderPreferred, zoals in de Getty AAT). Bijvoorbeeld 'Baros' is prefLabel met altLabel "Baros III van velden", en het heeft 4 broaders. Als platte tabel levert elke permutatie een regel, dus een WHERE-query levert 8 afzonderlijke records, (regels in een CSV-file, json-nodes of XML-nodes). Die kun je in de interface wel weer groeperen, maar we willen zoveel mogelijk werk door SPARQL laten doen. Onderstaande query antwoordt met een Adlib-achtige datastructuur waarin die groepering al gedaan is. We halen alle WO2-velden op in SKOS-xml, die we met een XSLT-transformatie omzetten naar AdlibXML. </p></li>
 </ul>
 
 <p>(Je kunt de query copy-pasten in het <a href="https://data.niod.nl/PoolParty/sparql/WO2_Thesaurus?">SPARQL-endpoint</a> en er verder mee experimenteren.)  </p>
