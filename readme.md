@@ -2,7 +2,7 @@
 
 Gv2ax lets you use Getty Vocabularies AAT as a built-in authority file in Adlib collection management software. 
 
-Gb2ax is a webservice built in Python 3.7 and Flask. This repository makes it an open source project and allows for easier deployment. 
+`Gv2ax.py` is a module for `service_adlibug.py`. Together they're a webservice. They're built in Python 3.7 and Flask. This repository makes it an open source project and allows for easier deployment. 
 
 For more information, see templates/index_content_en.html (English) or templates/index_content_nl.html (Dutch)
 
@@ -12,6 +12,16 @@ Gv2ax can run as a local service using Flask's built in test server. Not recomme
 
 - redo intro video, as 'portret' is a bad object name
 - add video for various ways of using the service in Adlib
+- research possible workarounds (using adapl) for issues. 
+
+## wo2ax.py - WO2-thesaurus to Adlib XML
+
+Wo2ax lets you use the WO2-thesaurus maintained by Nederlands Instituut voor Oorlogsdocumentatie (NIOD) as a built-in authority file in Adlib collection management software. WO2 stands for WereldOorlog 2, World War 2. NIOD is Dutch Institute for War Documentation, part of the Royal Dutch Academy of Sciences. 
+
+Like `gv2ax.py`, `wo2ax.py` is a module for `service_adlibug.py. 
+
+For more information, see templates/wo2_content_nl.html (Dutch). 
+
 
 ### License
 
