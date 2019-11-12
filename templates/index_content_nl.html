@@ -6,13 +6,13 @@
 
 <p>Door middel van deze webservice kun je thesaurustermen in Adlib ontlenen en/of aanvullen met informatie uit de Art &amp; Architecture Thesaurus.  </p>
 
-<p>De service is bedoeld als een zogenaamde <em>Advanced External Source</em> in Adlib. Om die te kunnen gebruiken, zijn aanpassingen in je Adlib-applicatie nodig. In <a href="/static/Advanced_external_source_v_service.adlibug.nl.pdf">dit document</a> is beschreven hoe je die aanpassingen kunt maken.  </p>
+<p>De service is bedoeld als een zogenaamde _Advanced External Source_ in Adlib. Om die te kunnen gebruiken, zijn aanpassingen in je Adlib-applicatie nodig. In <a href="/static/Advanced_external_source_v_service.adlibug.nl.pdf">dit document</a> is beschreven hoe je die aanpassingen kunt maken.  </p>
 
 <h4>Wat doet het?</h4>
 
 <p>Hoe het werkt voor gebruikers is te zien in deze video.  </p>
 
-<iframe src="https://player.vimeo.com/video/314264717" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  
+<iframe src="https://player.vimeo.com/video/372652439" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <h4>Wat moet je aanpassen in Adlib?</h4>
 
@@ -37,7 +37,7 @@
 
 <p><a href="http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de">http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de</a>  </p>
 
-<p>In Adlib Designer geef je de <em>external source</em> voor je termen (bijvoorbeeld Objectnaam, Object categorie of Trefwoord) voor elk veld in tabblad <em>Linked field properties</em>, box <em>External sources</em>, veld  <em>Path to URL</em>. Voor Nederlands geef je dit:  </p>
+<p>In Adlib Designer geef je de _external source_ voor je termen (bijvoorbeeld Objectnaam, Object categorie of Trefwoord) voor elk veld in tabblad _Linked field properties_, box _External sources_, veld  _Path to URL_. Voor Nederlands geef je dit:  </p>
 
 <pre><code>http://service.adlibug.nl/aat/search?term=%data%
 </code></pre>
@@ -113,7 +113,7 @@
 </tr>
 <tr>
   <td><code>term_type</code></td>
-  <td><em>Soort term</em> in Getty Vocabularies</td>
+  <td>_Soort term_ in Getty Vocabularies</td>
   <td>nee, zie 2.</td>
   <td></td>
 </tr>
@@ -125,7 +125,7 @@
 </tr>
 <tr>
   <td><code>broader.term</code></td>
-  <td><em>Preferred broader term</em> van de <em>gevonden term</em> in Getty Vocabularies</td>
+  <td>_Preferred broader term_ van de _gevonden term_ in Getty Vocabularies</td>
   <td>ja, zie 3.</td>
   <td><code>bt</code></td>
 </tr>
@@ -136,12 +136,12 @@
 
 <ol>
 <li><p>Deze URL is een unieke, persistente identifier in de vorm van een internet-link naar het Getty ID voor de term. In welk veld zet je die? <br />
-a. Applicatie-versie 4.5 heeft standaard een veld <code>source.number</code> met tag <code>tn</code> van het data-type <em>Application</em>. <br />
-b. Applicatie-versies 3.4 en 4.2 bevatten standaard het veld <code>term.number</code> met tag <code>tn</code>, van het data-type <em>Text</em>. Meestal wil je een hyperlink aanklikbaar hebben, dus dan moet het data-type van dat veld <em>Application</em> worden. <br />
+a. Applicatie-versie 4.5 heeft standaard een veld <code>source.number</code> met tag <code>tn</code> van het data-type _Application_. <br />
+b. Applicatie-versies 3.4 en 4.2 bevatten standaard het veld <code>term.number</code> met tag <code>tn</code>, van het data-type _Text_. Meestal wil je een hyperlink aanklikbaar hebben, dus dan moet het data-type van dat veld _Application_ worden. <br />
 c. Als je ervoor kiest om in je thesaurus een aparte veldgroep aan te maken voor deze velden, dan moet je in de data dictionary het Engelstalige URL-veld <code>Getty_ID</code> noemen in de data dictionary.  </p></li>
-<li><p>Adlib bevat een veld <em>soort term</em> (<code>term.type</code>) voor het domein van de term (bijvoorbeeld <em>vervaardiger</em> of <em>materiaalsoort</em>). In Getty Vocabularies heeft <code>term_type</code> eerder de functie van <em>term status</em>, maar de waardes daarvan komen niet overeen met die in Adlib. Daarom is dit veld wel bruikbaar ter oriëntatie, maar minder geschikt om over te nemen in Adlib. Hetzelfde geldt voor <code>term_type_uri</code>.  </p></li>
+<li><p>Adlib bevat een veld _soort term_ (<code>term.type</code>) voor het domein van de term (bijvoorbeeld _vervaardiger_ of _materiaalsoort_). In Getty Vocabularies heeft <code>term_type</code> eerder de functie van _term status_, maar de waardes daarvan komen niet overeen met die in Adlib. Daarom is dit veld wel bruikbaar ter oriëntatie, maar minder geschikt om over te nemen in Adlib. Hetzelfde geldt voor <code>term_type_uri</code>.  </p></li>
 <li><p>Of je Getty's Broader Preferred term al dan niet moet overnemen in je eigen thesaurus, hangt sterk af van je collectie.  </p></li>
-<li><p>Gemakshalve noemen we een 'URL' <a href="http://vocab.getty.edu/page/aat/300212636"><em>human-readable</em></a>, en een 'URI' <a href="http://vocab.getty.edu/aat/300212636"><em>machine-readable</em></a>. De service geeft beiden. <br />
+<li><p>Gemakshalve noemen we een 'URL' <a href="http://vocab.getty.edu/page/aat/300212636">_human-readable_</a>, en een 'URI' <a href="http://vocab.getty.edu/aat/300212636">_machine-readable_</a>. De service geeft beiden. <br />
 <br>  </p></li>
 </ol>
 
