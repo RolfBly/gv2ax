@@ -6,13 +6,13 @@
 
 <p>This webservice allows you to derive and/or complement thesaurus-records in your Adlib, from the Art &amp; Architecture Thesaurus (AAT), maintained by The Getty Vocabularies Project. The fields that you can derive and/or complement are detailed below.  </p>
 
-<p>The webservice is intended as an <em>Advanced External Source</em> in Adlib. In order to use the service, you may need to upgrade your Adlib software to version 7.5, and you will need to make a few modifications to your Adlib-application. <a href="/static/Advanced_external_source_v_service.adlibug.nl.pdf">This document</a> provides the details.  </p>
+<p>The webservice is intended as an _Advanced External Source_ in Adlib. In order to use the service, you may need to upgrade your Adlib software to version 7.5, and you will need to make a few modifications to your Adlib-application. <a href="/static/Advanced_external_source_v_service.adlibug.nl.pdf">This document</a> provides the details.  </p>
 
 <h4>Wat does it do?</h4>
 
 <p>This video shows what it looks like for the Adlib user. Narration in Dutch.  </p>
 
-<iframe src="https://player.vimeo.com/video/314264717" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  
+<iframe src="https://player.vimeo.com/video/372652439" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <h4>How to modify Adlib</h4>
 
@@ -37,7 +37,7 @@
 
 <p><a href="http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de">http://service.adlibug.nl/aat/search?term=fahrrad&amp;lang=de</a>  </p>
 
-<p>In Adlib Designer, you specify the external source for your term(s) (e.g. Object name, Object category, or Keyword) for each field, in its tab <em>Linked field properties</em>, box <em>External sources</em>, field <em>Path to URL</em>. For Dutch, you would enter:  </p>
+<p>In Adlib Designer, you specify the external source for your term(s) (e.g. Object name, Object category, or Keyword) for each field, in its tab _Linked field properties_, box _External sources_, field _Path to URL_. For Dutch, you would enter:  </p>
 
 <pre><code>http://service.adlibug.nl/aat/search?term=%data%
 </code></pre>
@@ -113,7 +113,7 @@
 </tr>
 <tr>
   <td><code>term_type</code></td>
-  <td><em>term type</em> in Getty Vocabularies</td>
+  <td>_term type_ in Getty Vocabularies</td>
   <td>no, see 2.</td>
   <td></td>
 </tr>
@@ -125,7 +125,7 @@
 </tr>
 <tr>
   <td><code>broader.term</code></td>
-  <td>Getty Vocabularies' <em>Preferred broader term</em> of the term found</td>
+  <td>Getty Vocabularies' _Preferred broader term_ of the term found</td>
   <td>yes, see 3.</td>
   <td><code>bt</code></td>
 </tr>
@@ -136,10 +136,10 @@
 
 <ol>
 <li><p>This URL is a unique, persistent identifier in the form of a hyperlink, to the Getty ID for the term. Where do you put this? <br />
-a. Application version 4.5 has a field <code>source.number</code>, tag <code>tn</code> of the type <em>Application</em>. <br />
-b. Application version 3.4 and 4.2 have the field <code>term.number</code>, tag <code>tn</code>, data type <em>Text</em>. You'll want hyperlinks to be clickable, so you'll have to change the data type to <em>Application</em>. <br />
+a. Application version 4.5 has a field <code>source.number</code>, tag <code>tn</code> of the type _Application_. <br />
+b. Application version 3.4 and 4.2 have the field <code>term.number</code>, tag <code>tn</code>, data type _Text_. You'll want hyperlinks to be clickable, so you'll have to change the data type to _Application_. <br />
 c. Should you choose to create a separate field group for the fields you derive with this service, then you should create a field with the data dictionary name Getty_ID, of the type Application.  </p></li>
-<li><p>Your Adlib thesaurus has a field <em>term type</em> (<code>term.type</code>) for the term's domain (e.g. <em>creator</em> or <em>material type</em>). In Getty Vocabularies, <code>term_type</code> is more a term <em>term status</em>, but it's values do not correspond to what's in Adlib. Hence, this field could be used for orientation, but copying it into a thesaurus record isn't very useful. Likewise for <code>term_type_uri</code>.  </p></li>
+<li><p>Your Adlib thesaurus has a field _term type_ (<code>term.type</code>) for the term's domain (e.g. _creator_ or _material type_). In Getty Vocabularies, <code>term_type</code> is more a term _term status_, but it's values do not correspond to what's in Adlib. Hence, this field could be used for orientation, but copying it into a thesaurus record isn't very useful. Likewise for <code>term_type_uri</code>.  </p></li>
 <li><p>Whether or not Getty's Broader Preferred term is suitable for your collection, your thesaurus, depends on your collection.  </p></li>
 <li><p>For the sake of simplicity, we call a 'URL' <a href="http://vocab.getty.edu/page/aat/300212636">human-readable</a>, and a 'URI' <a href="http://vocab.getty.edu/aat/300212636">machine-readable</a>. The service provides both.  </p></li>
 </ol>

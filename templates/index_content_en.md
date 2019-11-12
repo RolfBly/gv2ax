@@ -11,7 +11,7 @@ The webservice is intended as an _Advanced External Source_ in Adlib. In order t
 #### Wat does it do?  
 
 This video shows what it looks like for the Adlib user. Narration in Dutch.  
-<iframe src="https://player.vimeo.com/video/314264717" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  
+<iframe src="https://player.vimeo.com/video/372652439" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 #### How to modify Adlib  
 
 [This document][1] provides full detail. You will need some skill with Adlib Designer.  
