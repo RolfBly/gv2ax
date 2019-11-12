@@ -11,7 +11,10 @@ De service is bedoeld als een zogenaamde _Advanced External Source_ in Adlib. Om
 #### Wat doet het?  
 
 Hoe het werkt voor gebruikers is te zien in deze video.  
-<iframe src="https://player.vimeo.com/video/314264717" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  
+
+<iframe src="https://player.vimeo.com/video/372652439" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+
 #### Wat moet je aanpassen in Adlib?  
 
 In [dit document][1] (Engels) is beschreven hoe je Adlib kunt aanpassen. Enige bekendheid met de bediening van Adlib Designer is noodzakelijk.  
